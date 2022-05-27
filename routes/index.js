@@ -20,7 +20,7 @@ router.post('/', multipartMiddleware, function(req, res, next) {
     axios({
       headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture"},
       method: 'post',
-      url: 'http://localhost:3000/',
+      url: 'https://wellthisis.herokuapp.com/',
       data: req.files
     }).then(function (response) {
       if(response.status !== "error"){
