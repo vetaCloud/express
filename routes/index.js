@@ -15,21 +15,25 @@ router.get('/', function(req, res, next) {
 
 ///UPLOAD FILE
 router.post('/', multipartMiddleware, function(req, res, next) {
-  axios({
-    headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture"},
-    method: 'post',
-    url: 'http://localhost:3000/',
-    data: req.files
-  }).then(function (response) {
-    if(response.status !== "error"){
-      console.log(response.data)
-      fs.unlinkSync(req.files.file.path)
-    }
-    else{
-      console.log(response.data)
-    }
-    res.redirect('/')
-  });
+  console.log(req.files)
+  try{
+    axios({
+      headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture"},
+      method: 'post',
+      url: 'http://localhost:3000/',
+      data: req.files
+    }).then(function (response) {
+      if(response.status !== "error"){
+        console.log(response.data)
+        fs.unlinkSync(req.files.file.path)
+      }
+      else{
+        console.log(response.data)
+      }
+      res.redirect('/')
+    });
+  }
+  catch(error){}
 });
 
 
