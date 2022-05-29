@@ -12,28 +12,23 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-
 ///UPLOAD FILE
 router.post('/', multipartMiddleware, function(req, res, next) {
-  console.log(req.files)
-  try{
-    axios({
-      headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture"},
-      method: 'post',
-      url: 'https://wellthisis.herokuapp.com/',
-      data: req.files
-    }).then(function (response) {
-      if(response.status !== "error"){
-        console.log(response.data)
-        fs.unlinkSync(req.files.file.path)
-      }
-      else{
-        console.log(response.data)
-      }
-      res.redirect('/')
-    });
-  }
-  catch(error){}
+  console.log(req.files.file.path)
+  axios({
+    headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture"},
+    method: 'post',
+    url: 'https://www.inmotionhosting.com/support/website/where-to-upload-files/',
+    data: req.files
+  }).then(function (response) {
+    if(response.status !== "error"){
+      // console.log(response.data)
+    }
+    else{
+      console.log(response.data)
+    }
+    res.redirect('/')
+  });
 });
 
 
@@ -65,7 +60,6 @@ router.post('/', multipartMiddleware, function(req, res, next) {
 //   }).then(function (response) {
 //     if(response.status !== error){
 //       console.log(response.data)
-//       fs.unlinkSync(req.files.file.path)
 //     }
 //     else{
 //       console.log(response.data)
@@ -84,7 +78,6 @@ router.post('/', multipartMiddleware, function(req, res, next) {
 //   }).then(function (response) {
 //     if(response.status !== error){
 //       console.log(response.data)
-//       fs.unlinkSync(req.files.file.path)
 //     }
 //     else{
 //       console.log(response.data)
@@ -104,7 +97,6 @@ router.post('/', multipartMiddleware, function(req, res, next) {
 //     data: req.files
 //   }).then(function (response) {
 //     console.log(response.data)
-//     fs.unlinkSync(req.files.file.path)
 //     res.redirect('/')
 //   });
 // });
