@@ -9,6 +9,7 @@ exports.homepage = function(req, res, next) {
 
 ///UPLOAD FILE
 exports.home = function(req, res, next){
+    console.log(req.files)
   axios({
     headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture"},
     method: 'post',
