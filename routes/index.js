@@ -6,8 +6,10 @@ var indexview  = require('../controllers/index')
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
-router.get('/', multipartMiddleware, indexview.homepage)
+router.get('/', indexview.homepage)
 router.post('/', multipartMiddleware, indexview.home)
+
+// router.post('/', multipartMiddleware, indexview.home)
 
 // router.post('/', multipartMiddleware, indexview.deleteFile)
 // router.post('/', multipartMiddleware, indexview.files)
