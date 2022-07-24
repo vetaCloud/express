@@ -23,3 +23,5 @@ controller.js
 var axios = require('axios');
 ```
 Axios is used to post the file to our server. HTTP would be integrated in subsequent versions
+
+Your Private Key would be needed for the next process. You can get it [here](https://dashboard.vetacloud.com/api-key)
