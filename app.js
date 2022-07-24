@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
-var bodyParser = require('body-parser');
 
 var app = express();
 
@@ -36,6 +35,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.use(bodyParser.json({ keepExtensions: true, uploadDir: (path.join(__dirname, "public/files")) }));
 
 module.exports = app;
