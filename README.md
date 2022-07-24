@@ -25,3 +25,10 @@ var axios = require('axios');
 Axios is used to post the file to our server. HTTP would be integrated in subsequent versions
 
 Your Private Key would be needed for the next process. You can get it [here](https://dashboard.vetacloud.com/api-key)
+
+# vetaCloud features avalable in Node JS
+1. Basic upload
+2. Image upload with optimization in parameters
+3. Video upload with optimization in parameters
+4. Delete file 
+5. Get all files in a route 
