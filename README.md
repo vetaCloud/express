@@ -31,4 +31,35 @@ Your Private Key would be needed for the next process. You can get it [here](htt
 2. Image upload with optimization in parameters
 3. Video upload with optimization in parameters
 4. Delete file 
-5. Get all files in a route 
+5. Fetch all files in a route 
+6. Sample Errors
+7. Extra 
+
+<br>
+
+# Basic upload
+
+Your Private key can be found on your [dashboard](https://dashboard.vetacloud.com/api-key). Make sure you are sending your API KEY and Route Name in the request header. Before pushing to our server, the file is hidden on your server so ensure to keep `fs.unlinkSync(req.files.file.path)` so as to delete the file from your server.
+
+```javascript
+var express = require('express');
+const fs = require('fs');
+
+axios({
+     maxContentLength: Infinity, maxBodyLength: Infinity, 
+     headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
+     method: 'post',
+     url: 'https://cloud.vetacloud.com',
+     data: {
+         file: req.files, raw: fs.readFileSync(req.files.file.path)
+     }
+   }).then(function (response) {
+     fs.unlinkSync(req.files.file.path)
+     if(response.status !== "error"){
+       console.log(response.data)
+     }
+     else{
+       console.log(response.data)
+     }
+   });
+```
