@@ -63,3 +63,29 @@ axios({
      }
    });
 ```
+Note: The files that are uploaded via this endpoint are subject to the Route type, image optimization specified in the route and the video optimization specified 
+
+# Image upload with optimization in parameters
+Images that are uploaded via this endpoint do not regard the values specified for image optimization in the route although there could be file rejection if the file uploaded is not an image. The image formats we support at the moment include; .png .jpg .gif .jpeg .svg .webf 
+
+```javascript
+axios({
+     headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
+     method: 'post',
+     url: 'https://cloud.vetacloud.com/image/50/50/10',
+     data: {
+           file: req.files, raw: fs.readFileSync(req.files.file.path)
+           }
+     }).then(function (response) {
+     if(response.status !== "error"){
+       console.log(response.data)
+     }
+     else{
+       console.log(response.data)
+     }
+     fs.unlinkSync(req.files.file.path)
+     res.redirect('/')
+});
+```
+The parameter is the height of the image. The second parameter is the length of the image. The third parameter is the quality of the image. To use the default detail of the image's height, length or quality, use 0. If you specify height, you must specify length and vise versa. 
+
