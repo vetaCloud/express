@@ -32,8 +32,9 @@ Your Private Key would be needed for the next process. You can get it [here](htt
 3. Video upload with optimization in parameters
 4. Delete file 
 5. Fetch all files in a route 
-6. Sample Errors
-7. Extra 
+6. Webhook
+7. Sample Errors
+8. Extra 
 
 <br>
 
@@ -84,8 +85,30 @@ axios({
        console.log(response.data)
      }
      fs.unlinkSync(req.files.file.path)
-     res.redirect('/')
 });
 ```
-The parameter is the height of the image. The second parameter is the length of the image. The third parameter is the quality of the image. To use the default detail of the image's height, length or quality, use 0. If you specify height, you must specify length and vise versa. 
+The first parameter is the height of the image. The second parameter is the length of the image. The third parameter is the quality of the image. To use the default detail of the image's height, length or quality, use 0. If you specify height, you must specify length and vise versa. 
 
+
+# Video upload with optimization in parameters
+Videos that are uploaded via this endpoint do not regard the values specified for video optimization in the route although there could be file rejection if the file uploaded is not a video. The image formats we support at the moment include; .mp4 .mov .wmv .avi .flv .mkv .webm .mpeg-2
+
+  axios({
+    maxContentLength: Infinity, maxBodyLength: Infinity,
+    headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
+    method: 'post',
+    url: 'https://cloud.vetacloud.com/video/50/50/10',
+    data: {
+          file: req.files, raw: fs.readFileSync(req.files.file.path)
+          }
+  }).then(function (response) {
+    if(response.status !== "error"){
+      console.log(response.data)
+    }
+    else{
+      console.log(response.data)
+    }
+    fs.unlinkSync(req.files.file.path)
+  });
+  
+The first parameter is the height of the video. The second parameter is the length of the video. The third parameter is the quality of the video. To use the default detail of the video's height, length or quality, use 0. If you specify height, you must specify length and vise versa. 
