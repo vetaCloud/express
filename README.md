@@ -112,3 +112,61 @@ axios({
 });
   ```
 The first parameter is the height of the video. The second parameter is the length of the video. The third parameter is the quality of the video. To use the default detail of the video's height, length or quality, use 0. If you specify height, you must specify length and vise versa. 
+
+# Delete file
+
+To delete a file, the name of the file is required.
+
+```javascript
+axios({
+     headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture", 'X_FILE_NAME': "IHNUBDUpl2facbgCu-BSp.png"},
+     method: 'delete',
+     url: 'https://cloud.vetacloud.com/',
+     }).then(function (response) {
+     if(response.status !== error){
+       console.log(response.data)
+     }
+     else{
+       console.log(response.data)
+     }
+});
+```
+
+# Fetch all files in a route 
+This would fetch all the files you have in a route alongside their details.
+```javascript
+   axios({
+     headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture"},
+     method: 'get',
+     url: 'https://cloud.vetacloud.com/files',
+   }).then(function (response) {
+     if(response.status !== error){
+       console.log(response.data)
+     }
+     else{
+       console.log(response.data)
+     }
+   });
+```
+
+# Webhook
+The webhook for every upload is in the response's data. 
+
+### ```Successful file upload```
+A successful file upload webhook is similar to this.
+QR Route is generated for all users but the code is generated for only Advanced and Premium users. QR Route is the route of a QR Code which holds the link to the file. 
+
+```javascript
+ status:"success",
+ message: "Successfully Uploaded",
+ file:{
+     name: "EU4ne4klGT5F32C4JU592d.mp4",
+     mimetype: ".mp4",
+     destination: `https://cloud.vetacloud.com/uploads/VTCD_PUBLIC_2cd6793f8daa684155ceed6b2a9c01/demo-videos/EU4ne4klGT5F32C4JU592d.mp4`,
+     size: 3.6899,
+     qrroute: `https://cloud.vetacloud.com/qrCodes/w3c2d679312f8daa684155cetyed6b2a789c01.png`
+ }
+ ```
+ The size is in Megabyte. We believe this simplifies accountability for users.
+ 
+ 
