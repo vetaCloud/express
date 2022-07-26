@@ -6,17 +6,10 @@ var indexview  = require('../controllers/index')
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
-router.get('/', indexview.homepage)
-// router.post('/', multipartMiddleware, indexview.home)
-
-// router.post('/', multipartMiddleware, indexview.deleteFile)
-// router.post('/', multipartMiddleware, indexview.files)
-// router.post('/', multipartMiddleware, indexview.demandImage)
-router.post('/', multipartMiddleware, indexview.demandVideo)
-
-// router.post('/delete', multipartMiddleware, indexview.deleteFile)
-// router.post('/files', multipartMiddleware, indexview.files)
-// router.post('/demandImage', multipartMiddleware, indexview.demandImage)
-// router.post('/demandVideo', multipartMiddleware, indexview.demandVideo)
+router.post('/', multipartMiddleware, indexview.home)
+router.post('/delete', multipartMiddleware, indexview.deleteFile)
+router.post('/files', multipartMiddleware, indexview.files)
+router.post('/demandImage', multipartMiddleware, indexview.demandImage)
+router.post('/demandVideo', multipartMiddleware, indexview.demandVideo)
 
 module.exports = router;
