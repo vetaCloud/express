@@ -50,7 +50,7 @@ axios({
      maxContentLength: Infinity, maxBodyLength: Infinity, 
      headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
      method: 'post',
-     url: 'https://cloud.vetacloud.com',
+     url: 'https://cloud.vetacloud.com/node/',
      data: {
          file: req.files, raw: fs.readFileSync(req.files.file.path)
      }
@@ -73,7 +73,7 @@ Images that are uploaded via this endpoint do not regard the values specified fo
 axios({
      headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
      method: 'post',
-     url: 'https://cloud.vetacloud.com/image/50/50/10',
+     url: 'https://cloud.vetacloud.com/node/image/50/50/10',
      data: {
            file: req.files, raw: fs.readFileSync(req.files.file.path)
            }
@@ -97,7 +97,7 @@ axios({
      maxContentLength: Infinity, maxBodyLength: Infinity,
      headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
      method: 'post',
-     url: 'https://cloud.vetacloud.com/video/50/50/10',
+     url: 'https://cloud.vetacloud.com/node/video/50/50/10',
      data: {
           file: req.files, raw: fs.readFileSync(req.files.file.path)
           }
@@ -121,7 +121,7 @@ To delete a file, the name of the file is required.
 axios({
      headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture", 'X_FILE_NAME': "IHNUBDUpl2facbgCu-BSp.png"},
      method: 'delete',
-     url: 'https://cloud.vetacloud.com/',
+     url: 'https://cloud.vetacloud.com/node/',
      }).then(function (response) {
      if(response.status !== error){
        console.log(response.data)
@@ -138,7 +138,7 @@ This would fetch all the files you have in a route alongside their details.
    axios({
      headers: {'X_API_KEY': 'VTCD_PRIVATE_2cd6793f8daa684155ceed6b2a9c01', 'X_ROUTE_NAME': "profile-picture"},
      method: 'get',
-     url: 'https://cloud.vetacloud.com/files',
+     url: 'https://cloud.vetacloud.com/node/files',
    }).then(function (response) {
      if(response.status !== error){
        console.log(response.data)
