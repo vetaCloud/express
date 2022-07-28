@@ -157,15 +157,16 @@ A successful file upload webhook is similar to this.
 QR Route is generated for all users but the code is generated for only Advanced and Premium users. QR Route is the route of a QR Code which holds the link to the file. 
 
 ```javascript
- status:"success",
- message: "Successfully Uploaded",
- file:{
-     name: "EU4ne4klGT5F32C4JU592d.mp4",
-     mimetype: ".mp4",
-     destination: `https://cloud.vetacloud.com/uploads/VTCD_PUBLIC_2cd6793f8daa684155ceed6b2a9c01/demo-videos/EU4ne4klGT5F32C4JU592d.mp4`,
-     size: 3.6899,
-     qrroute: `https://cloud.vetacloud.com/qrCodes/w3c2d679312f8daa684155cetyed6b2a789c01.png`
- }
+{
+  status: 'success',
+  message: 'Successfully Uploaded',
+  file: {
+    name: 'QeXhRhba3OVD2ZeLwguUW.jpg',
+    destination: 'https://cloud.vetacloud.com/uploads/VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d/profile-picture/QeXhRhba3OVD2ZeLwguUW.jpg',
+    size: 0.068369,
+    qrroute: 'https://cloud.vetacloud.com/qrCodes/fdd836b12c8ee44d59df6eb42972910b4df628ecf991889994b753c36bfe.png'
+  }
+}
  ```
  The size is in Megabyte. We believe this simplifies accountability for users.
  
