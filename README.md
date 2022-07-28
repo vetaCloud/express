@@ -253,4 +253,4 @@ QR Route is generated for all users but the code is generated for only Advanced 
 }
  ```
  # Extra
- The maximum file size we allow is 300 MB. This would increase in our future updates.
+ The maximum file size we allow is 300 MB. This would increase in our future updates. Okay, byeee!
