@@ -177,15 +177,20 @@ QR Route is generated for all users but the code is generated for only Advanced 
  { status: 'error', message: 'File too large' }
  ```
  
- ```Suucessful file delete```
+ ```Successful file delete```
  Here is the response y'll get if a file has been successfully deleted 
+  ```javascript
  {
   status: 'success',
   message: 'File successfully deleted'
 }
-
+ ```
+ 
  ### ```Unsuccessful file delete```
+  When a file is not successfully deleted, the issue is mostly that the delete request has been made before, the file doesn't exist or the file name is wrong.
+   ```javascript 
  {
   status: 'error',
   message: 'File not found. Please check your private key and file name to make sure they are correct'
 }
+  ```
