@@ -11,7 +11,7 @@ exports.home = function(req, res, next){
   try{
      axios({
       maxContentLength: Infinity, maxBodyLength: Infinity, 
-      headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
+      headers: {'X_API_KEY': 'VTCD_PRIVATE_0968f2c2a8e42df0325042fd910e32', 'X_ROUTE_NAME': "profile-picture"},
       method: 'post',
       url: 'https://cloud.vetacloud.com',
       data: {
@@ -41,7 +41,7 @@ exports.home = function(req, res, next){
 // exports.demandImage = function(req, res, next){
 //   try{
 //    axios({
-//     headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
+//     headers: {'X_API_KEY': 'VTCD_PRIVATE_0968f2c2a8e42df0325042fd910e32', 'X_ROUTE_NAME': "profile-picture"},
 //     method: 'post',
 //     url: 'https://cloud.vetacloud.com/image/50/50/10',
 //     data: {
@@ -73,7 +73,7 @@ exports.home = function(req, res, next){
 //   try{
 //     axios({
 //       maxContentLength: Infinity, maxBodyLength: Infinity, 
-//       headers: {'X_API_KEY': 'VTCD_PRIVATE_884b1fccfbd0882267636854bcddf1', 'X_ROUTE_NAME': "profile-picture"},
+//       headers: {'X_API_KEY': 'VTCD_PRIVATE_0968f2c2a8e42df0325042fd910e32', 'X_ROUTE_NAME': "profile-picture"},
 //       method: 'post',
 //       url: 'https://cloud.vetacloud.com/video/50/50/10',
 //       data: {
