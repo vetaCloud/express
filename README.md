@@ -33,8 +33,7 @@ Your Private Key would be needed for the next process. You can get it [here](htt
 4. Delete file 
 5. Fetch all files in a route 
 6. Webhook
-7. Sample Errors
-8. Extra 
+7. Extra 
 
 <br>
 
@@ -194,3 +193,64 @@ QR Route is generated for all users but the code is generated for only Advanced 
   message: 'File not found. Please check your private key and file name to make sure they are correct'
 }
   ```
+### ```Fetch all files in a route ```
+
+ ```javascript 
+{
+  status: 'success',
+  message: [
+    {
+      name: 'bu6W9WN5FTceSgufxZ7c5.jpg',
+      upload_key: 'VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d',
+      route: 'profile-picture',
+      fileroute: 'https://cloud.vetacloud.com/uploads/VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d/profile-picture/bu6W9WN5FTceSgufxZ7c5.jpg',
+      date: 'Jul 2022 Thu at 19:4',
+      size: '68369',
+      mime_type: 'image/jpeg',
+      qrroute: 'https://cloud.vetacloud.com/qrCodes/df861cd86a8dcf90931a11405c96da460cfa9832bed107b417c94b170d2d.png'
+    },
+    {
+      name: '7lHz7iyI9Xfz2TArqImlG.jpg',
+      upload_key: 'VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d',
+      route: 'profile-picture',
+      fileroute: 'https://cloud.vetacloud.com/uploads/VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d/profile-picture/7lHz7iyI9Xfz2TArqImlG.jpg',
+      date: 'Jul 2022 Thu at 19:23',
+      size: '68369',
+      mime_type: 'image/jpeg',
+      qrroute: 'https://cloud.vetacloud.com/qrCodes/932f698d703e5d97ec8a8fcdf0a80990220d54cfd29cd9f69121f219ca87.png'
+    },
+    {
+      name: 'jjdEg3wXAUwe9TbhDGag2.jpg',
+      upload_key: 'VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d',
+      route: 'profile-picture',
+      fileroute: 'https://cloud.vetacloud.com/uploads/VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d/profile-picture/jjdEg3wXAUwe9TbhDGag2.jpg',
+      date: 'Jul 2022 Thu at 19:30',
+      size: '68369',
+      mime_type: 'image/jpeg',
+      qrroute: 'https://cloud.vetacloud.com/qrCodes/d92deb08d4daad51af5b389192cff952f1c296dadc5659efc29cf53b8731.png'
+    },
+    {
+      name: 'Hr9MezAldZqu8ZTEn5IHS.jpg',
+      upload_key: 'VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d',
+      route: 'profile-picture',
+      fileroute: 'https://cloud.vetacloud.com/uploads/VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d/profile-picture/Hr9MezAldZqu8ZTEn5IHS.jpg',
+      date: 'Jul 2022 Thu at 19:33',
+      size: '68369',
+      mime_type: 'image/jpeg',
+      qrroute: 'https://cloud.vetacloud.com/qrCodes/50b27205d5fa6a9b13ba2624722e7773828790404e9533e09cef4e9fe944.png'
+    },
+    {
+      name: 'dE0DGao5zJ7M-4qV-Rg_V.jpg',
+      upload_key: 'VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d',
+      route: 'profile-picture',
+      fileroute: 'https://cloud.vetacloud.com/uploads/VTCD_PUBLIC_f2b95f3a6138e01f51de562ff10a9d/profile-picture/dE0DGao5zJ7M-4qV-Rg_V.jpg',
+      date: 'Jul 2022 Thu at 19:38',
+      size: '68369',
+      mime_type: 'image/jpeg',
+      qrroute: 'https://cloud.vetacloud.com/qrCodes/07b0c89456563eea555daa3d5572ab5c3b3a4bc490c6064c08708ba10def.png'
+    }
+  ]
+}
+ ```
+ # Extra
+ The maximum file size we allow is 300 MB. This would increase in our future updates.
