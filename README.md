@@ -170,4 +170,22 @@ QR Route is generated for all users but the code is generated for only Advanced 
  ```
  The size is in Megabyte. We believe this simplifies accountability for users.
  
+ ### ```Unsuccessful file upload```
+ There are so many types of errors that could be returned if a file isnt successfully uploaded but below is an example.
  
+ ```javascript
+ { status: 'error', message: 'File too large' }
+ ```
+ 
+ ```Suucessful file delete```
+ Here is the response y'll get if a file has been successfully deleted 
+ {
+  status: 'success',
+  message: 'File successfully deleted'
+}
+
+ ### ```Unsuccessful file delete```
+ {
+  status: 'error',
+  message: 'File not found. Please check your private key and file name to make sure they are correct'
+}
