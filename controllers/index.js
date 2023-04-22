@@ -11,21 +11,26 @@ exports.home = function(req, res, next){
   try{
      axios({
       maxContentLength: Infinity, maxBodyLength: Infinity, 
-      headers: {'X_API_KEY': 'VTCD_PRIVATE_0968f2c2a8e42df0325042fd910e32', 'X_ROUTE_NAME': "profile-picture"},
+      headers: {'X_API_KEY': 'VTCD_PRIVATE_dee905af5f64wfg4rt8ef378318aca', 'X_ROUTE_NAME': "react"},
       method: 'post',
-      url: 'https://cloud.vetacloud.com/node/',
+      url: 'http://cloud.vetacloud.com/node',
       data: {
           file: req.files, raw: fs.readFileSync(req.files.file.path)
       }
     }).then(function (response) {
       fs.unlinkSync(req.files.file.path)
-      if(response.status !== "error"){
-        console.log(response.data)
+      if(response.status == "error"){
+        return res.status(400).json({
+          status: 400,
+          "success": false,
+          "message": "Something went wrong"
+        })
       }
-      else{
-        console.log(response.data)
-      }
-      res.redirect('/')
+      return res.status(200).json({
+        status: 200,
+        "success": true,
+        "message": response.data
+      })
     }); 
   }
   catch(err){
