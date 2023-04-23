@@ -1,25 +1,20 @@
-var express = require('express');
 const fs = require('fs');
 var axios = require('axios')
-
-/* GET home page. */
-exports.homepage = function(req, res, next) {
-  res.render('index');
-}
 
 exports.home = function(req, res, next){
   try{
      axios({
       maxContentLength: Infinity, maxBodyLength: Infinity, 
-      headers: {'X_API_KEY': 'VTCD_PRIVATE_dee905af5f64wfg4rt8ef378318aca', 'X_ROUTE_NAME': "react"},
+      headers: {'X_API_KEY': 'VTCD_PRIVATE_dee91a7c05bdaf5f648ef378318aca', 'X_ROUTE_NAME': "react"},
       method: 'post',
-      url: 'http://cloud.vetacloud.com/node',
+      url: 'https://cloud.vetacloud.com/node/video/0/0/70',
       data: {
           file: req.files, raw: fs.readFileSync(req.files.file.path)
       }
     }).then(function (response) {
       fs.unlinkSync(req.files.file.path)
-      if(response.status == "error"){
+      if(response.status == "error" || response.data.status == "error"){
+        console.log(response.data)
         return res.status(400).json({
           status: 400,
           "success": false,
@@ -33,12 +28,12 @@ exports.home = function(req, res, next){
       })
     }); 
   }
-  catch(err){
-    return Response.send(
-      res,
-      500,
-      "Error occured"
-    )
+  catch(err){console.log(err)
+    return res.status(500).send({
+      status: 500,
+      "success": false,
+      "message": "Error occured"
+    })
   }
 }
 
