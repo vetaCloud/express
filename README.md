@@ -24,6 +24,8 @@ var axios = require('axios');
 ```
 Axios is used to post the file to our server. HTTP would be integrated in subsequent versions
 
+Note: Before you can upload your files, you need to create a Route. Route is the directory that you will be uploading your files to. Click [here](https://dashboard.vetacloud.com/add-route) to create one.
+
 Your Private Key would be needed for the next process. You can get it [here](https://dashboard.vetacloud.com/api-key)
 
 # vetaCloud features avalable in Node JS
@@ -256,5 +258,10 @@ QR Route is generated for all users but the code is generated for only Advanced 
   ]
 }
  ```
+ <img width="1060" alt="Screen Shot 2023-04-22 at 6 46 21 PM" src="https://user-images.githubusercontent.com/63419117/234043083-e990941a-9cc7-43bb-ace9-41e42575ade7.png">
+
+ 
+ 
+ 
  # Extra
  The maximum file size we allow is 300 MB. This would increase in our future updates. Okay, byeee!
