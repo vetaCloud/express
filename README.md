@@ -65,7 +65,7 @@ axios({
      }
    });
 ```
-Note: The files that are uploaded via this endpoint are subject to the Route type, image optimization specified in the route and the video optimization specified 
+Note: The files that are uploaded via this endpoint are subject to the Route type, image optimization specified in the route and the video optimization specified. Leave them as 0 to use the default media file height, width and quality. 
 
 # Image upload with optimization in parameters
 Images that are uploaded via this endpoint do not regard the values specified for image optimization in the route although there could be file rejection if the file uploaded is not an image. The image formats we support at the moment include; .png .jpg .gif .jpeg .svg .webf 
